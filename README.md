@@ -4,6 +4,13 @@ A website for a new takeaway shop, in Luton a small town in the UK, ORIGINAL PFC
 # Table of Contents
 1. [Introduction](#1-introduction)
 2. [Requirements and Project Objectives](#2-requirements-and-project-objectives)
+3. [Design](#3-design)
+4. [Developing and Testing](#4-developing-and-testing)
+5. [Recommendations](#5-recommendations)
+6. [Challenges and reflection](#6-challenges-and-reflections)
+7. [Conclusion](#7-conclusion)
+8. [References](#8-references)
+9. [Appendix](#9-appendix)
 
 # 1.0 - Introduction
 The Original Perfect Fried Chicken is a takeaway shop located In Luton that has just opened recently at the end of September. Every food establishment needs a good website for its clients and customers to be able to find out information about them and to entice people to come and try their food. This project aims to design and develop a responsive informational website for Original PFC Luton to improve its online presence and customer engagement. The business currently lacks a dedicated website, limiting customers’ ability to access menu information, allergen guidance, and contact details. This proposal outlines the requirements, methodology, objectives, and project plan for delivering a research-informed website solution aligned with employer needs.
@@ -29,3 +36,16 @@ To test the website across different devices and browsers to identify and resolv
 ## 2.6 – Release and review
 To deploy the final product using a suitable hosting platform and conduct a final review with the business owner to confirm that the project meets agreed requirements, and this is all to be completed by 14th of March.
 
+# 3.0 - Design
+
+# 4.0 - Developing and Testing
+
+# 5.0 - Recommendations
+
+# 6.0 - Challenges and reflection
+
+# 7.0 - Conclusion
+
+# 8.0 - References
+
+# 9.0 - Appendix
