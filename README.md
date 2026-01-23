@@ -19,3 +19,7 @@ To design a responsive website layout using wireframes and mock-ups to ensure th
 
 ## 2.3 – Menu Implementation
 To implement a structured and categorised online menu with clear descriptions and allergen information, allowing customers to easily browse items safely and efficiently as researched in the literature review stated by (Dayan and Bar-Hillel, 2011). This is to be completed by the week commencing 9th of February.
+
+## 2.4 – Visual Content Integration
+To integrate a limited number of high-quality images of the shop and selected menu items, based on research recommendations, to enhance user engagement without cluttering the interface. The images will be obtained by third party source due to safety agreements and the employer form I cannot go directly to the business to conduct any work for this project on site. This is to be completed by 16th of February.
+
