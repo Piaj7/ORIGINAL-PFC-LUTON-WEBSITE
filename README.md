@@ -14,4 +14,6 @@ Here are six improved project objectives which have been altered based on feedba
 ## 2.1 – Requirements finalisation
 To finalise the functional and non-functional requirements for the website based on employer feedback and research findings, to ensure the project scope is clearly defined and achievable and this is to be completed by 19th of January.
 
+## 2.2 – Website Design
+To design a responsive website layout using wireframes and mock-ups to ensure the website is easy to navigate and suitable for mobile and desktop users which is to be completed by 2nd of February.
 
