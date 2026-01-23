@@ -17,3 +17,5 @@ To finalise the functional and non-functional requirements for the website based
 ## 2.2 – Website Design
 To design a responsive website layout using wireframes and mock-ups to ensure the website is easy to navigate and suitable for mobile and desktop users which is to be completed by 2nd of February.
 
+## 2.3 – Menu Implementation
+To implement a structured and categorised online menu with clear descriptions and allergen information, allowing customers to easily browse items safely and efficiently as researched in the literature review stated by (Dayan and Bar-Hillel, 2011). This is to be completed by the week commencing 9th of February.
