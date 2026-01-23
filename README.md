@@ -23,3 +23,6 @@ To implement a structured and categorised online menu with clear descriptions an
 ## 2.4 – Visual Content Integration
 To integrate a limited number of high-quality images of the shop and selected menu items, based on research recommendations, to enhance user engagement without cluttering the interface. The images will be obtained by third party source due to safety agreements and the employer form I cannot go directly to the business to conduct any work for this project on site. This is to be completed by 16th of February.
 
+## 2.5 – Testing and refinement
+To test the website across different devices and browsers to identify and resolve usability or performance issues, ensuring the system meets defined non-functional requirements. To be completed by 1st of March.
+
