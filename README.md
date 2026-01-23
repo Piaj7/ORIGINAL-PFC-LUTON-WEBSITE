@@ -26,3 +26,6 @@ To integrate a limited number of high-quality images of the shop and selected me
 ## 2.5 – Testing and refinement
 To test the website across different devices and browsers to identify and resolve usability or performance issues, ensuring the system meets defined non-functional requirements. To be completed by 1st of March.
 
+## 2.6 – Release and review
+To deploy the final product using a suitable hosting platform and conduct a final review with the business owner to confirm that the project meets agreed requirements, and this is all to be completed by 14th of March.
+
