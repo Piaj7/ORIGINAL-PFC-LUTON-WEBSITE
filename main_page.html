@@ -1,57 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <title>Original PFC Luton</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Original PFC Luton</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Fonts (cleaned & deduped) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
 </head>
-<body>
-    
-<nav class="navbar">
-  <h1 class="logo">
-    <a href="main_page.html">ORIGINAL PFC LUTON</a>
-  </h1>
 
-  <div class="nav-links">
-    <h2><a href="menu_page.html">MENU</a></h2>
-    <h2><a href="about_page.html">ABOUT US</a></h2>
-    <h2><a href="faqs_page.html">FAQs</a></h2>
-    <h2><a href="contact_page.html">CONTACT</a></h2>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <h1 class="logo">
+      <a href="main_page.html">ORIGINAL PFC LUTON</a>
+    </h1>
+
+    <div class="nav-links">
+      <h2><a href="menu_page.html">MENU</a></h2>
+      <h2><a href="about_page.html">ABOUT US</a></h2>
+      <h2><a href="faqs_page.html">FAQs</a></h2>
+      <h2><a href="contact_page.html">CONTACT</a></h2>
+    </div>
   </div>
 </nav>
 
 
-<div class="main">
-    <h1 class="section-title stroke-text">BEST PFC IN TOWN</h1>
-    <a href="menu_page.html">CHECK OUT OUR MENU</a>
-</div>
+  <!-- HERO SECTION -->
+  <section class="hero">
 
-<div>
-    <h2>OUR BEST SELLERS</h2>
-    <div class="best-sellers">
-        <div class="best-seller-item">
-            <img src="pfc1.jpg" alt="PFC Meal 1">
-            <h3>Item #1</h3>
-            <p>READ MORE!</p>
-        </div>
-        <div class="best-seller-item">
-            <img src="pfc2.jpg" alt="PFC Meal 2">
-            <h3>Item #2</h3>
-            <p>READ MORE!</p>
-        </div>
-        <div class="best-seller-item">
-            <img src="pfc3.jpg" alt="PFC Meal 3">
-            <h3>Item #3</h3>
-            <p>READ MORE!</p>
-        </div>
-    
-</div>
-<div class="footer">
-    <p>Original PFC Luton Est. 2025</p>
+    <div class="hero-content">
+    <h1 class="hero-title-text">
+      BEST PFC<br>IN LUTON
+    </h1>
+
+
+      <a href="menu_page.html" class="cta-box">
+        CHECK OUT<br />OUR MENU
+      </a>
+    </div>
+
+    <div class="hero-image">
+      <img src="mainpfc1.png" alt="PFC Meal 1">
+    </div>
+
+  </section>
+
+  <!-- BEST SELLERS -->
+  <section id="best-sellers" class="best-sellers">
+    <h2 class="section-title">OUR BEST SELLERS</h2>
+
+    <div class="seller-grid">
+      <div class="best-seller-item">
+        <img src="example.jpg" alt="PFC Meal 1">
+        <h3>PFC 1</h3>
+        <p>READ MORE!</p>
+      </div>
+
+      <div class="best-seller-item">
+        <img src="example.jpg" alt="PFC Meal 2">
+        <h3>PFC 2</h3>
+        <p>READ MORE!</p>
+      </div>
+
+      <div class="best-seller-item">
+        <img src="example.jpg" alt="PFC Meal 3">
+        <h3>PFC 3</h3>
+        <p>READ MORE!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Original PFC Luton &copy; 2025</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="scroll-to-best-sellers.js"></script>
 
 </body>
 </html>
