@@ -45,36 +45,39 @@ body {
 /* =====================
    TYPOGRAPHY
 ===================== */
-h1, h2, h3, .section-title, .logo {
+h1,
+h2,
+h3,
+.section-title,
+.logo {
   font-family: 'Chewy', cursive;
   letter-spacing: 0.08em;
 }
 
 .section-title {
+  line-height: 0.9;
+  color: var(--white);
   text-shadow:
-    2px 2px 0 var(--orange-mid),
-    5px 5px 0 var(--orange-light);
+    3px 3px 0 var(--orange-mid),
+    6px 6px 0 var(--orange-light);
 }
 
 /* =====================
-   NAVBAR (FULL WIDTH)
+   NAVBAR
 ===================== */
 .navbar {
-  max-width: 1300px;          /* slightly wider than before */
-  margin: 24px auto;          /* centered */
+  max-width: 1300px;
+  margin: 48px auto;
   padding: 18px 0;
-
   background: var(--yellow);
-  border-radius: 999px;       /* pill edges */
+  border-radius: 999px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
-
 
 .navbar-inner {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 28px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -125,41 +128,52 @@ h1, h2, h3, .section-title, .logo {
 
 .hero-content {
   max-width: 520px;
-  position: relative;
   padding-top: 120px;
   padding-bottom: 80px;
+  position: relative;
   z-index: 5;
 }
 
-/* TEXT TITLE */
+/* HERO TITLE */
 .hero-title-text {
-  font-family: 'Chewy', cursive;
   font-size: clamp(5.5rem, 12vw, 8.5rem);
-  line-height: 0.9;
-  letter-spacing: 0.08em;
-  color: var(--white);
+  margin-top: -180px;
+  margin-left: -10px;
+  margin-bottom: -10px;
+  position: relative;
+  z-index: 6;
   text-shadow:
     3px 3px 0 var(--orange-mid),
     7px 7px 0 var(--orange-light);
-
-  margin-top: -100px;
-  margin-left: -60px;
-  margin-bottom: -100px;
-  position: relative;
-  z-index: 6;
 }
+
+.hero-title-text span {
+  display: block;
+  font-size: 0.75em;        
+  margin-top: 12px;
+}
+
+.hero-title-text {
+  margin-top: -220px;   /* was -180px */
+}
+
+
 
 /* CTA */
 .cta-box {
   display: inline-block;
-  margin-top: 120px;
-  padding: 18px 28px;
-  border: 3px dashed var(--white);
-  border-radius: var(--radius-sm);
+  margin-top: 140px;               
+  padding: 48px 80px;                
+  border: 6px dashed var(--white);   
+  border-radius: var(--radius-md);
+
   font-family: 'Chewy', cursive;
-  font-size: 1.2rem;
+  font-size: 3.1rem;                 
+  letter-spacing: 0.08em;
+
   animation: ctaBounce 2.2s ease-in-out infinite;
 }
+
 
 @keyframes ctaBounce {
   0%, 100% { transform: translateY(0); }
@@ -172,7 +186,7 @@ h1, h2, h3, .section-title, .logo {
 .hero-image {
   position: sticky;
   top: 120px;
-  margin-left: -80px;
+  margin-left: -200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -181,15 +195,15 @@ h1, h2, h3, .section-title, .logo {
 .hero-image::before {
   content: "";
   position: absolute;
-  width: 460px;
-  height: 460px;
+  width: 620px;
+  height: 560px;
   background: var(--orange-mid);
   border-radius: 50%;
 }
 
 .hero-image img {
   position: relative;
-  max-width: 520px;
+  max-width: 720px;
   width: 100%;
   animation: heroIn 0.9s ease-out both;
 }
@@ -212,6 +226,11 @@ h1, h2, h3, .section-title, .logo {
   min-height: 120vh;
   padding: 140px 80px 180px;
   background: var(--orange-light);
+}
+
+.best-sellers .section-title {
+  font-size: clamp(3.8rem, 6vw, 5.5rem);
+  margin-bottom: 60px;
 }
 
 .seller-grid {
@@ -240,6 +259,21 @@ h1, h2, h3, .section-title, .logo {
 
 .best-seller-item:hover img {
   transform: scale(1.05);
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+footer a {
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 /* =====================
@@ -282,6 +316,11 @@ h1, h2, h3, .section-title, .logo {
 
   .best-sellers {
     padding: 100px 24px 140px;
+  }
+
+  .best-sellers .section-title {
+    font-size: 2.6rem;
+    margin-bottom: 32px;
   }
 
   .best-seller-item img {
