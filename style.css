@@ -1,104 +1,112 @@
-/* =====================
-   VARIABLES
-===================== */
-:root {
-  --orange-dark: #c94a00;
-  --orange-mid: #f07a00;
-  --orange-light: #ffb300;
-  --yellow: #ffc400;
-  --green: #8fb339;
-
-  --white: #fff;
-  --black: #111;
-
-  --radius-md: 20px;
-  --radius-sm: 12px;
-}
-
-/* =====================
-   RESET / BASE
-===================== */
-* {
+/* =========================
+   RESET
+========================= */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Remove ALL default link styling */
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   BRAND VARIABLES
+========================= */
+:root {
+  --red-dark: #8f0000;
+  --red-main: #c40000;
+  --red-bright: #ff1a1a;
+
+  --yellow: #ffc400;
+  --white: #ffffff;
+  --black: #111111;
+
+  --radius-pill: 999px;
+  --radius-md: 20px;
+  --radius-sm: 12px;
+}
+
+/* =========================
+   BODY
+========================= */
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--white);
+  overflow-x: hidden;
+
   background: linear-gradient(
     180deg,
-    var(--orange-dark),
-    var(--orange-mid),
-    var(--orange-light)
+    var(--red-dark),
+    var(--red-main),
+    var(--red-bright)
   );
-  min-height: 100vh;
-  overflow-x: hidden;
 }
 
-/* =====================
-   TYPOGRAPHY
-===================== */
-h1,
-h2,
-h3,
-.section-title,
-.logo {
-  font-family: 'Chewy', cursive;
-  letter-spacing: 0.08em;
+/* Subtle texture overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 4px 4px;
+  pointer-events: none;
+  opacity: 0.25;
 }
 
-.section-title {
-  line-height: 0.9;
-  color: var(--white);
-  text-shadow:
-    3px 3px 0 var(--orange-mid),
-    6px 6px 0 var(--orange-light);
-}
-
-/* =====================
-   NAVBAR
-===================== */
+/* =========================
+   NAVBAR (WHITE ROUNDED)
+========================= */
 .navbar {
-  max-width: 1300px;
-  margin: 48px auto;
-  padding: 18px 0;
-  background: var(--yellow);
-  border-radius: 999px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 18px 40px;
+  background: var(--white);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+
+  color: var(--black);
 }
 
 .navbar-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar a {
-  color: var(--black);
+.nav-logo {
+  font-family: 'Chewy', cursive;
+  font-size: 1.8rem;
+  color: var(--red-main);
+  
 }
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 28px;
 }
 
 .nav-links a {
   font-weight: 700;
-  font-size: 1.95rem;
   text-transform: uppercase;
+  color: var(--black);
   position: relative;
+  transition: all 0.3s ease;
 }
 
+/* Underline animation */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -106,136 +114,151 @@ h3,
   bottom: -6px;
   width: 0;
   height: 3px;
-  background: var(--orange-mid);
-  transition: width 0.25s ease;
+  background: var(--red-main);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after {
   width: 100%;
 }
 
-/* =====================
-   HERO
-===================== */
+.nav-links a:hover {
+  transform: translateY(-3px);
+  color: var(--red-main);
+}
+
+
+
+/* =========================
+   HERO SECTION
+========================= */
 .hero {
-  min-height: 90vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 85vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 80px 100px;
-  overflow: visible;
+  padding: 60px 40px 100px;
 }
 
 .hero-content {
   max-width: 520px;
-  padding-top: 120px;
-  padding-bottom: 80px;
-  position: relative;
-  z-index: 5;
 }
 
-/* HERO TITLE */
 .hero-title-text {
-  font-size: clamp(5.5rem, 12vw, 8.5rem);
-  margin-top: -180px;
-  margin-left: -10px;
-  margin-bottom: -10px;
-  position: relative;
-  z-index: 6;
+  font-family: 'Chewy', cursive;
+  font-size: clamp(4rem, 7vw, 6rem);
+  line-height: 1.05;
   text-shadow:
-    3px 3px 0 var(--orange-mid),
-    7px 7px 0 var(--orange-light);
+    3px 3px 0 #6e0000,
+    6px 6px 0 #ff4d4d;
 }
 
 .hero-title-text span {
   display: block;
-  font-size: 0.75em;        
-  margin-top: 12px;
+  font-size: 0.8em;
+  margin-top: 10px;
 }
 
-.hero-title-text {
-  margin-top: -220px;   /* was -180px */
-}
-
-
-
-/* CTA */
+/* =========================
+   CTA BUTTON
+========================= */
 .cta-box {
+  position: relative;
   display: inline-block;
-  margin-top: 140px;               
-  padding: 48px 80px;                
-  border: 6px dashed var(--white);   
+  margin-top: 50px;
+  padding: 26px 45px;
+  border: 4px dashed var(--white);
   border-radius: var(--radius-md);
-
   font-family: 'Chewy', cursive;
-  font-size: 3.1rem;                 
-  letter-spacing: 0.08em;
-
-  animation: ctaBounce 2.2s ease-in-out infinite;
+  font-size: 1.6rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-
-@keyframes ctaBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+.cta-box:hover {
+  background: var(--white);
+  color: var(--red-dark);
+  transform: scale(1.05);
 }
 
-/* =====================
+/* Shine animation */
+.cta-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.6) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+}
+
+.cta-box:hover::before {
+  animation: shine 0.8s ease forwards;
+}
+
+@keyframes shine {
+  100% { left: 125%; }
+}
+
+/* =========================
    HERO IMAGE
-===================== */
+========================= */
 .hero-image {
-  position: sticky;
-  top: 120px;
-  margin-left: -200px;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
 }
 
 .hero-image::before {
   content: "";
   position: absolute;
-  width: 620px;
-  height: 560px;
-  background: var(--orange-mid);
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #ff3b3b 0%, transparent 70%);
   border-radius: 50%;
+  filter: blur(15px);
 }
 
 .hero-image img {
   position: relative;
-  max-width: 720px;
   width: 100%;
-  animation: heroIn 0.9s ease-out both;
+  max-width: 420px;   /* increased from 420px */
+  height: auto;
+  transition: transform 0.4s ease;
+}
+.hero-image:hover img {
+  transform: scale(1.05);
 }
 
-@keyframes heroIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* =====================
+/* =========================
    BEST SELLERS
-===================== */
+========================= */
 .best-sellers {
-  min-height: 120vh;
-  padding: 140px 80px 180px;
-  background: var(--orange-light);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 40px;
 }
 
-.best-sellers .section-title {
-  font-size: clamp(3.8rem, 6vw, 5.5rem);
-  margin-bottom: 60px;
+.best-sellers h2 {
+  font-family: 'Chewy', cursive;
+  font-size: clamp(3rem, 5vw, 4rem);
+  margin-bottom: 50px;
+  text-shadow:
+    2px 2px 0 #6e0000,
+    4px 4px 0 #ff4d4d;
 }
 
 .seller-grid {
-  margin-top: 60px;
-  margin-bottom: 120px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
@@ -247,83 +270,100 @@ h3,
   border-radius: var(--radius-md);
   padding: 20px;
   text-align: center;
+  transition: all 0.3s ease;
+}
+
+.best-seller-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 .best-seller-item img {
   width: 100%;
-  height: 380px;
+  aspect-ratio: 4/3;
   object-fit: cover;
   border-radius: var(--radius-sm);
   transition: transform 0.3s ease;
 }
 
 .best-seller-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
-/* =====================
+/* =========================
    FOOTER
-===================== */
+========================= */
 footer {
   text-align: center;
   padding: 40px 20px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   opacity: 0.85;
 }
 
-footer a {
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-/* =====================
+/* =========================
    MOBILE
-===================== */
+========================= */
 @media (max-width: 768px) {
+
+  .navbar {
+    margin: 20px;
+    padding: 14px 20px;
+  }
+
+  .navbar-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 60px 24px;
-  }
-
-  .hero-content {
-    padding: 40px 0;
+    padding: 40px 20px 70px;
+    min-height: auto;
   }
 
   .hero-title-text {
-    font-size: 3.4rem;
-    margin: 0 0 24px;
+    font-size: 2.4rem;
+    text-shadow:
+      2px 2px 0 #6e0000,
+      4px 4px 0 #ff4d4d;
   }
 
   .cta-box {
-    margin-top: 24px;
-    animation: none;
+    margin-top: 30px;
+    padding: 18px 22px;
+    font-size: 1.2rem;
   }
 
   .hero-image {
-    position: static;
-    margin: 40px 0 0;
+    margin-top: 40px;
   }
 
   .hero-image::before {
-    width: 260px;
-    height: 260px;
+    width: 250px;
+    height: 250px;
   }
 
   .hero-image img {
-    max-width: 300px;
+    max-width: 240px;
   }
 
   .best-sellers {
-    padding: 100px 24px 140px;
+    padding: 70px 20px;
   }
 
-  .best-sellers .section-title {
-    font-size: 2.6rem;
-    margin-bottom: 32px;
-  }
-
-  .best-seller-item img {
-    height: 160px;
+  .best-sellers h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
   }
 }
