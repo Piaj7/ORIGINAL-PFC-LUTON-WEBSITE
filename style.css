@@ -367,3 +367,46 @@ footer {
     margin-bottom: 30px;
   }
 }
+
+/* --- Mobile nav toggle button --- */
+.nav-toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Simple button style reused (for READ MORE) */
+.btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 14px 22px;
+  border-radius: var(--radius-pill);
+  background: #8aa61c; /* matches your mockup green vibe */
+  color: #fff;
+  font-weight: 800;
+}
+
+/* Improve mobile nav behaviour */
+@media (max-width: 768px) {
+  .nav-toggle { display: block; }
+
+  .navbar-inner {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: none;          /* hidden by default on mobile */
+    width: 100%;
+    padding-top: 10px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .nav-links[data-open="true"] {
+    display: flex;
+  }
+}
