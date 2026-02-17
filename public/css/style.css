@@ -122,6 +122,28 @@ body::after{
   transform: translateY(-2px);
 }
 
+/* --- Navbar hover underline effect --- */
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 3px;
+  background-color: #d62828; /* nice bold red */
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
 /* Hamburger */
 .nav-toggle{
   display:none;
@@ -443,3 +465,8 @@ footer a{
   .menu-grid{ grid-template-columns: 1fr; }
 }
 
+/* -------- TEST BACKGROUND ONLY -------- */
+body{
+  background: url("../images/background.png") no-repeat center center fixed;
+  background-size: cover;
+}
