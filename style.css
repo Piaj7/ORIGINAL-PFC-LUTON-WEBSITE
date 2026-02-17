@@ -502,3 +502,75 @@ footer a{
 footer a:hover{
   text-decoration: underline;
 }
+
+.social { margin-top: 48px; }
+.section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 16px; }
+
+.social-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.social-card{
+  background: rgba(255,255,255,0.85);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 768px){
+  .social-grid{ grid-template-columns: 1fr; }
+}
+
+/* Social section */
+.contact-social{
+  margin-top: 48px;
+  border-top: 2px dashed rgba(0,0,0,0.15);
+  padding-top: 32px;
+}
+
+.section-title{
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 16px;
+}
+
+.social-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.social-card{
+  background: rgba(255,255,255,0.85);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden; /* prevents iframe overflow */
+}
+
+.muted{ opacity: 0.75; margin-top: 6px; }
+
+.ig-embeds{
+  display: grid;
+  gap: 12px;
+  margin: 10px 0 14px;
+}
+
+/* Make embeds responsive */
+.instagram-media{
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.fb-page, .fb-page span, .fb-page iframe{
+  width: 100% !important;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .social-grid{ grid-template-columns: 1fr; }
+}
