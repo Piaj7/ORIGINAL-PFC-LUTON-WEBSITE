@@ -122,25 +122,32 @@ body::after{
   transform: translateY(-2px);
 }
 
-/* --- Navbar hover underline effect --- */
-.nav-links a {
+/* underline base */
+.nav-links a{
   position: relative;
   text-decoration: none;
 }
 
-.nav-links a::after {
+/* underline line */
+.nav-links a::after{
   content: "";
   position: absolute;
   left: 0;
   bottom: -4px;
-  width: 0%;
   height: 3px;
-  background-color: #d62828; /* nice bold red */
-  transition: width 0.3s ease;
+  width: 0%;
+  background: #d62828;
   border-radius: 2px;
+  transition: width 0.25s ease;
 }
 
-.nav-links a:hover::after {
+/* hover underline */
+.nav-links a:hover::after{
+  width: 100%;
+}
+
+/* ✅ active underline stays */
+.nav-links a.active::after{
   width: 100%;
 }
 
