@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menu · Original PFC Luton</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="nav-logo" href="index.html">ORIGINAL PFC LUTON</a>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+      <nav class="nav-links" data-open="false">
+        <a href="menu.html">MENU</a>
+        <a href="about.html">ABOUT</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page">
+    <h1 class="page-title">MENU</h1>
+
+    <p class="lead">
+      Browse our menu categories below. (This page is already structured so we can plug in a database later.)
+    </p>
+
+    <div class="menu-toolbar" role="navigation" aria-label="Menu categories">
+      <button class="chip is-active" type="button" data-filter="all">All</button>
+      <button class="chip" type="button" data-filter="chicken">Chicken</button>
+      <button class="chip" type="button" data-filter="burgers">Burgers</button>
+      <button class="chip" type="button" data-filter="sides">Sides</button>
+      <button class="chip" type="button" data-filter="drinks">Drinks</button>
+    </div>
+
+    <section class="menu-grid" id="menu-grid" aria-live="polite">
+      <!-- Example cards (replace with DB later) -->
+      <article class="menu-card" data-category="chicken">
+        <div class="menu-img img-placeholder"></div>
+        <h3>3 Piece Chicken Meal</h3>
+        <p class="muted">Served with fries &amp; sauce.</p>
+        <p class="price">£6.99</p>
+      </article>
+
+      <article class="menu-card" data-category="burgers">
+        <div class="menu-img img-placeholder"></div>
+        <h3>Chicken Burger</h3>
+        <p class="muted">Crispy fillet with sauce.</p>
+        <p class="price">£4.99</p>
+      </article>
+
+      <article class="menu-card" data-category="sides">
+        <div class="menu-img img-placeholder"></div>
+        <h3>Fries</h3>
+        <p class="muted">Classic salted fries.</p>
+        <p class="price">£1.99</p>
+      </article>
+    </section>
+  </main>
+  <footer>
+    ORIGINAL PFC LUTON · EST. 2025 —
+    Website designed &amp; built by
+    <a href="https://github.com/Piaj7" target="_blank" rel="noopener">Fayaaz Choudhury</a>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
