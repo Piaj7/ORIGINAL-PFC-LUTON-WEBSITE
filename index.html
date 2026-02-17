@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Original PFC Luton</title>
 
-  <!-- Fonts (your CSS already references these) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -16,67 +15,70 @@
 <body>
   <header class="navbar">
     <div class="navbar-inner">
-      <a class="nav-logo" href="./index.html">🍔 ORIGINAL PFC LUTON</a>
+      <a class="nav-logo" href="./index.html">ORIGINAL PFC LUTON</a>
 
-      <!-- Hamburger (mobile) -->
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        ☰
-      </button>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
 
       <nav class="nav-links" data-open="false">
-        <a href="./about_page.html">ABOUT</a>
-        <a href="./menu_page.html">OUR MENU</a>
-        <a href="./faqs_page.html">FAQS</a>
-        <a href="./contact_page.html">CONTACT US</a>
+        <a href="./about.html">ABOUT</a>
+        <a href="./menu.html">OUR MENU</a>
+        <a href="./faqs.html">FAQS</a>
+        <a href="./contact.html">CONTACT US</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main class="page">
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
         <h1 class="hero-title-text">
-          BEST PFC IN
-          <span>TOWN</span>
+          BEST PFC IN <span>TOWN</span>
         </h1>
 
-        <a class="cta-box" href="./menu_page.html">CHECK OUT<br/>OUR MENU</a>
+        <a class="cta-box" href="./menu.html">CHECK OUT<br>OUR MENU</a>
       </div>
 
       <div class="hero-image">
-        <img src="./pfc_hero.png" alt="PFC meal" />
+        <!-- swap this src to the exact image you want -->
+        <img src="./pfc_hero.png" alt="PFC meal">
       </div>
     </section>
 
-    <section class="best-sellers" id="best-sellers">
+    <!-- BEST SELLERS -->
+    <section class="best-sellers">
       <h2>OUR BEST SELLERS</h2>
 
       <div class="seller-grid">
         <article class="best-seller-item">
-          <img src="./mainpfc1.png" alt="Food 1" />
-          <h3>PFC 1</h3>
-          <a class="btn" href="./menu_page.html">READ MORE!</a>
+          <img src="./mainpfc1.png" alt="Best seller 1">
+          <h3>BEST SELLER 1</h3>
+          <a class="btn" href="./menu.html">READ MORE!</a>
         </article>
 
         <article class="best-seller-item">
-          <img src="./example.jpg" alt="Food 2" />
-          <h3>PFC 2</h3>
-          <a class="btn" href="./menu_page.html">READ MORE!</a>
+          <img src="./best-pfc.png" alt="Best seller 2">
+          <h3>BEST SELLER 2</h3>
+          <a class="btn" href="./menu.html">READ MORE!</a>
         </article>
 
         <article class="best-seller-item">
-          <img src="./best-pfc.png" alt="Food 3" />
-          <h3>PFC 3</h3>
-          <a class="btn" href="./menu_page.html">READ MORE!</a>
+          <img src="./example.jpg" alt="Best seller 3">
+          <h3>BEST SELLER 3</h3>
+          <a class="btn" href="./menu.html">READ MORE!</a>
         </article>
       </div>
     </section>
   </main>
 
-  <footer>
-    ORIGINAL PFC LUTON · EST. 2025 — website designed &amp; built by Fayaaz Choudhury
-  </footer>
+<footer>
+  ORIGINAL PFC LUTON · EST. 2025 —
+  Website designed & built by
+  <a href="https://github.com/Piaj7" target="_blank" rel="noopener">
+    Fayaaz Choudhury
+  </a>
+</footer>
 
-  <script src="./script.js"></script>
+  <script src="./java.js"></script>
 </body>
 </html>
