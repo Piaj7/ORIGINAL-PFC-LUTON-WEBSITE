@@ -574,3 +574,124 @@ footer a:hover{
 @media (max-width: 900px){
   .social-grid{ grid-template-columns: 1fr; }
 }
+
+/* ---------- Navbar (Responsive + Semantic) ---------- */
+
+.navbar{
+  background: var(--primary-yellow);
+  box-shadow: var(--shadow-soft);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Logo */
+.nav-logo{
+  font-family: "Chewy", cursive;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--dark-text);
+}
+
+/* Desktop nav */
+.nav-links{
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-links a{
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--dark-text);
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+
+.nav-links a:hover{
+  background: rgba(0,0,0,0.08);
+}
+
+/* Hamburger */
+.nav-toggle{
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+
+  .nav-toggle{ display: block; }
+
+  .navbar-inner{
+    flex-wrap: wrap;
+  }
+
+  .nav-links{
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  .nav-links[data-open="true"]{
+    display: flex;
+  }
+
+  .nav-links a{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+/* Bring back the white pill/box inside the yellow navbar */
+.navbar{
+  background: var(--primary-yellow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-inner{
+  max-width: 1200px;
+  margin: 10px auto;           /* gives space around the pill */
+  padding: 12px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  background: rgba(255,255,255,0.92); /* <-- white part */
+  border-radius: 999px;              /* pill shape */
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 768px){
+  .navbar-inner{ border-radius: 24px; }
+}
+
+@media (max-width: 768px){
+  .nav-toggle{ display: block; }
+
+  .nav-links{ display: none; width: 100%; flex-direction: column; }
+
+  .nav-links[data-open="true"]{ display: flex; }
+}
