@@ -30,6 +30,12 @@ a:hover { text-decoration: none; }
   --shadow-soft: 0 15px 40px rgba(0,0,0,0.25);
 }
 
+/* -------- BACKGROUND -------- */
+body{
+  background: url("../images/background2.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
 body{
   font-family: "Poppins", sans-serif;
   color: var(--white);
@@ -436,3 +442,4 @@ footer a{
   .about-layout{ grid-template-columns: 1fr; }
   .menu-grid{ grid-template-columns: 1fr; }
 }
+
