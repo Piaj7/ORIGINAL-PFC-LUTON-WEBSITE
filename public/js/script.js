@@ -1,53 +1,54 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ===============================
-     NAVBAR (Hamburger + Active)
-  =============================== */
+  /* ==================================================
+     NAVBAR (Hamburger + Auto Active)
+  ================================================== */
 
   const navBtn = document.querySelector(".nav-toggle");
-  const navLinks = document.querySelector(".nav-links");
+  const navMenu = document.querySelector(".nav-links");
+  const navLinks = document.querySelectorAll(".nav-links a");
 
-  if (navBtn && navLinks) {
+  if (navBtn && navMenu) {
 
-    if (!navLinks.hasAttribute("data-open")) {
-      navLinks.setAttribute("data-open", "false");
+    // Ensure attribute exists
+    if (!navMenu.hasAttribute("data-open")) {
+      navMenu.setAttribute("data-open", "false");
     }
 
-    // Toggle menu
+    // Toggle mobile menu
     navBtn.addEventListener("click", () => {
-      const isOpen = navLinks.getAttribute("data-open") === "true";
+      const open = navMenu.getAttribute("data-open") === "true";
 
-      navLinks.setAttribute("data-open", String(!isOpen));
-      navBtn.setAttribute("aria-expanded", String(!isOpen));
+      navMenu.setAttribute("data-open", String(!open));
+      navBtn.setAttribute("aria-expanded", String(!open));
     });
 
-    // Auto-active link
-    const links = document.querySelectorAll(".nav-links a");
-
+    // Auto active link
     let currentPage = window.location.pathname.split("/").pop();
 
     if (currentPage === "" || currentPage === "/") {
       currentPage = "index.html";
     }
 
-    links.forEach(link => {
+    navLinks.forEach(link => {
+
+      // Highlight active
       if (link.getAttribute("href") === currentPage) {
         link.classList.add("active");
       }
 
-      // Close menu on mobile after click
+      // Close menu on click (mobile)
       link.addEventListener("click", () => {
-        navLinks.setAttribute("data-open", "false");
+        navMenu.setAttribute("data-open", "false");
         navBtn.setAttribute("aria-expanded", "false");
       });
     });
   }
 
 
-  /* ===============================
-     MENU DATA (STATIC FOR NOW)
-     -> Replace with API later
-  =============================== */
+  /* ==================================================
+     MENU DATA (STATIC → DATABASE LATER)
+  ================================================== */
 
   const MENU_ITEMS = [
     {
@@ -68,14 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Chicken Strips",
       category: "Chicken",
       price: 6.49,
-      desc: "Golden crunchy chicken strips.",
+      desc: "Golden crunchy strips.",
       image: "images/pfc_hero.png"
     },
     {
       name: "Seasoned Fries",
       category: "Sides",
       price: 2.49,
-      desc: "Crispy seasoned fries.",
+      desc: "Crispy fries with seasoning.",
       image: "images/mainpfc1.png"
     },
     {
@@ -88,9 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
 
-  /* ===============================
+  /* ==================================================
      MENU PAGE LOGIC
-  =============================== */
+  ================================================== */
 
   const menuGrid = document.getElementById("menuGrid");
   const chips = document.querySelectorAll(".chip");
@@ -136,18 +137,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Category filter
     if (activeCategory !== "All") {
-      results = results.filter(item =>
-        item.category === activeCategory
-      );
+      results = results.filter(i => i.category === activeCategory);
     }
 
     // Search filter
-    if (searchQuery.trim() !== "") {
+    if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
 
-      results = results.filter(item =>
-        item.name.toLowerCase().includes(q) ||
-        item.desc.toLowerCase().includes(q)
+      results = results.filter(i =>
+        i.name.toLowerCase().includes(q) ||
+        i.desc.toLowerCase().includes(q)
       );
     }
 
@@ -165,7 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       activeCategory = btn.dataset.category || "All";
 
-      // Open popup if not "All"
       if (activeCategory !== "All") {
         openCategoryModal(activeCategory);
       }
@@ -176,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // Search
+  // Search input
   if (searchBox) {
 
     searchBox.addEventListener("input", (e) => {
@@ -192,9 +190,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* ===============================
+  /* ==================================================
      CATEGORY MODAL (POPUP)
-  =============================== */
+  ================================================== */
 
   const modal = document.getElementById("categoryModal");
   const modalTitle = document.getElementById("modalTitle");
@@ -228,7 +226,6 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
 
-    // Prevent background scroll
     document.body.style.overflow = "hidden";
   }
 
@@ -244,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // Close by backdrop / X
+  // Close popup
   if (modal) {
 
     modal.addEventListener("click", (e) => {
@@ -261,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // Close with ESC
+  // ESC close
   document.addEventListener("keydown", (e) => {
 
     if (e.key === "Escape" && modal?.classList.contains("is-open")) {
@@ -269,5 +266,63 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
   });
+
+
+  /* ==================================================
+     FAQ PAGE (Search + Accordion)
+  ================================================== */
+
+  const faqSearch = document.getElementById("faqSearch");
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  if (faqSearch && faqItems.length) {
+
+    faqItems.forEach(item => {
+
+      const answer = item.querySelector(".faq-answer");
+
+      if (answer) answer.style.maxHeight = "0px";
+
+      // One open at a time
+      item.addEventListener("toggle", () => {
+
+        if (item.open) {
+          faqItems.forEach(other => {
+            if (other !== item) other.open = false;
+          });
+        }
+
+        // Smooth height
+        if (answer) {
+          if (item.open) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          } else {
+            answer.style.maxHeight = "0px";
+          }
+        }
+
+      });
+
+    });
+
+    // Search filter
+    faqSearch.addEventListener("input", (e) => {
+
+      const q = e.target.value.toLowerCase();
+
+      faqItems.forEach(item => {
+
+        const text = item.textContent.toLowerCase();
+        const match = text.includes(q);
+
+        item.style.display = match ? "" : "none";
+
+        if (!match) item.open = false;
+
+      });
+
+    });
+
+  }
 
 });

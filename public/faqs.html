@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="page-faqs">
   <header class="navbar">
     <div class="navbar-inner">
       <a class="nav-logo" href="index.html">ORIGINAL PFC LUTON</a>
@@ -29,86 +29,79 @@
 
     <header class="faq-head">
       <h1 class="page-title">FREQUENTLY ASKED QUESTIONS</h1>
-      <p class="faq-intro">
-        Find answers to common questions about our food, orders, and services.
-      </p>
+      <p class="faq-intro">Find answers to common questions about our food, orders, and services.</p>
+
+      <!-- B) Search -->
+      <div class="faq-search">
+        <input id="faqSearch" type="search" placeholder="Search FAQs (e.g. halal, delivery, allergy…)" aria-label="Search FAQs">
+      </div>
     </header>
 
+    <div id="faqList">
+      <!-- FOOD -->
+      <h2 class="faq-group">Food & Ingredients</h2>
 
-    <!-- FOOD -->
-    <h2 class="faq-group">🍗 Food & Ingredients</h2>
+      <details class="faq-item">
+        <summary>Are your products halal?</summary>
+        <div class="faq-answer"><p>Yes, all our chicken products are 100% halal certified.</p></div>
+      </details>
 
-    <details>
-      <summary>Are your products halal?</summary>
-      <p>Yes, all our chicken products are 100% halal certified.</p>
-    </details>
+      <details class="faq-item">
+        <summary>Do you provide allergen information?</summary>
+        <div class="faq-answer"><p>Please contact our staff for full allergen and dietary information.</p></div>
+      </details>
 
-    <details>
-      <summary>Do you use fresh chicken?</summary>
-      <p>Yes, we use fresh, high-quality chicken prepared daily.</p>
-    </details>
+      <details class="faq-item">
+        <summary>Do you offer vegetarian options?</summary>
+        <div class="faq-answer"><p>We currently offer selected vegetarian sides and snacks.</p></div>
+      </details>
 
-    <details>
-      <summary>Do you offer vegetarian options?</summary>
-      <p>We currently offer selected vegetarian sides and snacks.</p>
-    </details>
+      <!-- ORDERS -->
+      <h2 class="faq-group">Orders & Delivery</h2>
 
-    <details>
-      <summary>Do you provide allergen information?</summary>
-      <p>Please contact our staff for full allergen and dietary information.</p>
-    </details>
+      <details class="faq-item">
+        <summary>Do you offer delivery?</summary>
+        <div class="faq-answer"><p>Yes, we offer local delivery through our website and delivery partners.</p></div>
+      </details>
 
+      <details class="faq-item">
+        <summary>What areas do you deliver to?</summary>
+        <div class="faq-answer"><p>We deliver across Luton and surrounding areas.</p></div>
+      </details>
 
-    <!-- ORDERS -->
-    <h2 class="faq-group">🚚 Orders & Delivery</h2>
+      <details class="faq-item">
+        <summary>How long does delivery take?</summary>
+        <div class="faq-answer"><p>Delivery usually takes between 30 and 45 minutes depending on demand.</p></div>
+      </details>
 
-    <details>
-      <summary>Do you offer delivery?</summary>
-      <p>Yes, we offer local delivery through our website and delivery partners.</p>
-    </details>
+      <!-- PAYMENTS -->
+      <h2 class="faq-group">Payments</h2>
 
-    <details>
-      <summary>What areas do you deliver to?</summary>
-      <p>We deliver across Luton and surrounding areas.</p>
-    </details>
+      <details class="faq-item">
+        <summary>What payment methods do you accept?</summary>
+        <div class="faq-answer"><p>We accept cash, card, and online payments.</p></div>
+      </details>
 
-    <details>
-      <summary>How long does delivery take?</summary>
-      <p>Delivery usually takes between 30 and 45 minutes depending on demand.</p>
-    </details>
+      <details class="faq-item">
+        <summary>Can I pay cash on delivery?</summary>
+        <div class="faq-answer"><p>Yes, cash payments are accepted for delivery orders.</p></div>
+      </details>
 
-    <details>
-      <summary>Is there a minimum order?</summary>
-      <p>Minimum order value may apply for delivery orders.</p>
-    </details>
+      <!-- SUPPORT -->
+      <h2 class="faq-group">Support</h2>
 
+      <details class="faq-item">
+        <summary>What if my order is incorrect?</summary>
+        <div class="faq-answer"><p>Please contact us immediately and we will resolve the issue.</p></div>
+      </details>
+    </div>
 
-    <!-- PAYMENTS -->
-    <h2 class="faq-group">💳 Payments</h2>
-
-    <details>
-      <summary>What payment methods do you accept?</summary>
-      <p>We accept cash, card, and online payments.</p>
-    </details>
-
-    <details>
-      <summary>Can I pay cash on delivery?</summary>
-      <p>Yes, cash payments are accepted for delivery orders.</p>
-    </details>
-
-
-    <!-- SUPPORT -->
-    <h2 class="faq-group">📞 Support</h2>
-
-    <details>
-      <summary>How can I contact you?</summary>
-      <p>You can contact us via phone, email, or through our Contact page.</p>
-    </details>
-
-    <details>
-      <summary>What if my order is incorrect?</summary>
-      <p>Please contact us immediately and we will resolve the issue.</p>
-    </details>
+    <!-- A) Still need help box -->
+    <aside class="faq-cta" aria-label="Need more help">
+      <h2>Still need help?</h2>
+      <p>If you can’t find your answer, message us and we’ll get back to you.</p>
+      <a class="btn" href="contact.html">Go to Contact Page →</a>
+    </aside>
 
   </section>
 </main>
