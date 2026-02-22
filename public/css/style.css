@@ -472,6 +472,13 @@ footer a{
   .menu-grid{ grid-template-columns: 1fr; }
 }
 
+/* Mobile navbar side padding */
+@media (max-width: 768px){
+  .navbar-inner{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
 /* -------- TEST BACKGROUND ONLY -------- */
 body{
   background: url("../images/background.png") no-repeat center center fixed;
