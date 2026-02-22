@@ -484,3 +484,371 @@ body{
   background: url("../images/background.png") no-repeat center center fixed;
   background-size: cover;
 }
+
+/* =========================
+   MENU PAGE
+========================= */
+.menu{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px 40px;
+}
+
+.menu-head{
+  text-align: center;
+  margin: 10px 0 20px;
+}
+
+.menu-title{
+  font-family: "Rubik Wet Paint", system-ui;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  letter-spacing: 1px;
+}
+
+.menu-subtitle{
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+.menu-controls{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+  margin: 18px 0 22px;
+}
+
+.chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.chip{
+  border: 0;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.16);
+  color: var(--white);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.chip:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.22);
+}
+
+.chip.is-active{
+  background: var(--yellow);
+  color: var(--black);
+}
+
+.menu-search{
+  display: flex;
+  justify-content: center;
+}
+
+.menu-search input{
+  width: min(320px, 100%);
+  padding: 12px 14px;
+  border-radius: var(--radius-pill);
+  border: 2px solid rgba(255,255,255,0.25);
+  outline: none;
+  background: rgba(255,255,255,0.12);
+  color: var(--white);
+}
+
+.menu-search input::placeholder{
+  color: rgba(255,255,255,0.8);
+}
+
+/* Grid */
+.menu-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Card */
+.menu-card{
+  background: rgba(255,255,255,0.12);
+  border: 2px solid rgba(255,255,255,0.14);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transition: transform 0.18s ease;
+}
+
+.menu-card:hover{
+  transform: translateY(-4px);
+}
+
+.menu-card img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.menu-card-body{
+  padding: 14px 14px 16px;
+}
+
+.menu-card-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.menu-card h3{
+  font-size: 1.05rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.menu-price{
+  font-weight: 900;
+  color: var(--yellow);
+}
+
+.menu-desc{
+  opacity: 0.9;
+  margin-top: 8px;
+  line-height: 1.35;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .menu-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .menu-controls{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px){
+  .menu-grid{ grid-template-columns: 1fr; }
+  .menu-card img{ height: 170px; }
+}
+
+/* =========================
+   CATEGORY MODAL
+========================= */
+.modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 2000;
+}
+
+.modal.is-open{
+  display: block;
+}
+
+.modal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.modal-panel{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -48%) scale(0.98);
+  opacity: 0;
+
+  width: min(980px, calc(100% - 24px));
+  max-height: min(80vh, 720px);
+  overflow: auto;
+
+  background: rgba(18,18,18,0.92);
+  border: 2px solid rgba(255,255,255,0.14);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  padding: 18px;
+  color: #fff;
+
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.modal.is-open .modal-panel{
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.modal-close{
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  display: block;
+
+  border: 0;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.modal-title{
+  margin: 10px 0 6px;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.modal-subtitle{
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+
+.modal-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 14px;
+}
+
+/* reuse your menu-card styling inside the modal */
+.modal-grid .menu-card img{ height: 150px; }
+
+@media (max-width: 900px){
+  .modal-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+@media (max-width: 560px){
+  .modal-grid{ grid-template-columns: 1fr; }
+}
+
+/* accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .modal-panel{ transition: none; }
+}
+
+/* ===== Modal polish ===== */
+.modal-backdrop{
+  backdrop-filter: blur(4px);
+}
+
+.modal-panel{
+  padding: 0; /* we will pad inside sections */
+  overflow: hidden;
+}
+
+/* Header strip */
+.modal-header{
+  padding: 18px 18px 14px;
+  background: linear-gradient(135deg, rgba(255,215,0,0.22), rgba(214,40,40,0.22));
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.modal-title{
+  margin: 0;
+}
+
+.modal-subtitle{
+  margin: 6px 0 0;
+}
+
+/* Close button nicer */
+.modal-close{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Body area */
+.modal-body{
+  padding: 16px 18px 18px;
+}
+
+/* Animation: soft rise */
+.modal-panel{
+  transform: translate(-50%, -46%) scale(0.98);
+}
+.modal.is-open .modal-panel{
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Mobile: bottom sheet style (looks premium) */
+@media (max-width: 560px){
+  .modal-panel{
+    left: 50%;
+    top: auto;
+    bottom: 12px;
+    transform: translateX(-50%) translateY(20px);
+    width: calc(100% - 24px);
+    max-height: 80vh;
+    border-radius: 18px;
+    opacity: 0;
+  }
+  .modal.is-open .modal-panel{
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   FAQ PAGE
+========================= */
+
+.faq{
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-head{
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.faq-intro{
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+.faq-group{
+  margin: 26px 0 10px;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.faq details{
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+
+.faq summary{
+  cursor: pointer;
+  font-weight: 800;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker{
+  display: none;
+}
+
+.faq summary::after{
+  content: "＋";
+  float: right;
+  font-weight: 900;
+  transition: transform 0.2s;
+}
+
+.faq details[open] summary::after{
+  content: "－";
+}
+
+.faq details p{
+  margin-top: 10px;
+  line-height: 1.4;
+  opacity: 0.9;
+}

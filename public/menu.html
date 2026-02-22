@@ -24,45 +24,46 @@
       </nav>
     </div>
   </header>
-  <main class="page">
-    <h1 class="page-title">MENU</h1>
 
-    <p class="lead">
-      Browse our menu categories below. (This page is already structured so we can plug in a database later.)
-    </p>
+<main class="page">
+  <section class="menu">
+    <header class="menu-head">
+      <h1 class="menu-title">MENU</h1>
+      <p class="menu-subtitle">Pick a category or search for your favourites.</p>
+    </header>
 
-    <div class="menu-toolbar" role="navigation" aria-label="Menu categories">
-      <button class="chip is-active" type="button" data-filter="all">All</button>
-      <button class="chip" type="button" data-filter="chicken">Chicken</button>
-      <button class="chip" type="button" data-filter="burgers">Burgers</button>
-      <button class="chip" type="button" data-filter="sides">Sides</button>
-      <button class="chip" type="button" data-filter="drinks">Drinks</button>
+    <div class="menu-controls">
+      <div class="chips" role="tablist" aria-label="Menu categories">
+        <button class="chip is-active" data-category="All" type="button">All</button>
+        <button class="chip" data-category="Chicken" type="button">Chicken</button>
+        <button class="chip" data-category="Burgers" type="button">Burgers</button>
+        <button class="chip" data-category="Wings" type="button">Wings</button>
+        <button class="chip" data-category="Sides" type="button">Sides</button>
+        <button class="chip" data-category="Drinks" type="button">Drinks</button>
+      </div>
+
+      <div class="menu-search">
+        <input id="menuSearch" type="search" placeholder="Search (e.g. burger, wings...)" aria-label="Search menu">
+      </div>
     </div>
 
-    <section class="menu-grid" id="menu-grid" aria-live="polite">
-      <!-- Example cards (replace with DB later) -->
-      <article class="menu-card" data-category="chicken">
-        <div class="menu-img img-placeholder"></div>
-        <h3>3 Piece Chicken Meal</h3>
-        <p class="muted">Served with fries &amp; sauce.</p>
-        <p class="price">£6.99</p>
-      </article>
+    <!-- JS will render items into this -->
+    <div id="menuGrid" class="menu-grid" aria-live="polite"></div>
+  </section>
+    <!-- Category Modal -->
+<div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <button class="modal-close" type="button" aria-label="Close" data-close="true">✕</button>
 
-      <article class="menu-card" data-category="burgers">
-        <div class="menu-img img-placeholder"></div>
-        <h3>Chicken Burger</h3>
-        <p class="muted">Crispy fillet with sauce.</p>
-        <p class="price">£4.99</p>
-      </article>
+  <div class="modal-header">
+    <h2 class="modal-title" id="modalTitle">Category</h2>
+    <p class="modal-subtitle" id="modalSubtitle"></p>
+  </div>
 
-      <article class="menu-card" data-category="sides">
-        <div class="menu-img img-placeholder"></div>
-        <h3>Fries</h3>
-        <p class="muted">Classic salted fries.</p>
-        <p class="price">£1.99</p>
-      </article>
-    </section>
-  </main>
+  <div class="modal-body">
+    <div class="modal-grid" id="modalGrid"></div>
+  </div>
+</div>
+</main>
   <footer>
     ORIGINAL PFC LUTON · EST. 2025 —
     Website designed &amp; built by
