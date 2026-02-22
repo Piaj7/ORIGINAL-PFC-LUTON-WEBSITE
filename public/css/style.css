@@ -983,3 +983,127 @@ body{
   margin-bottom: 12px;
   opacity: 0.85;
 }
+
+/* =========================
+   SECTION BANDS (full-width)
+========================= */
+.band{
+  width: 100%;
+}
+
+/* HERO background image only on the top band */
+.band--hero{
+  position: relative;
+  padding: 30px 0 50px;
+  background:
+    linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.55)),
+    url("./background.png") center / cover no-repeat; /* <-- change filename/path if needed */
+}
+
+/* Make sure hero text stays readable */
+.band--hero .hero{
+  min-height: 85vh;
+}
+
+/* Solid colour section band (best sellers) */
+.band--solid{
+  background: #fff6e5; /* warm cream */
+  color: #111;
+  padding: 60px 0;
+}
+
+/* Best sellers inside solid band: let .page handle width */
+.band--solid .best-sellers{
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure headings/text switch to dark on light background */
+.band--solid .best-sellers h2,
+.band--solid .best-sellers h3,
+.band--solid .best-sellers p{
+  color: #111;
+}
+
+/* =========================
+   FOOTER (distinct band)
+========================= */
+footer{
+  background: #111;          /* strong contrast */
+  color: #fff;
+  text-align: center;
+  padding: 26px 16px;
+  font-size: 0.95rem;
+  opacity: 1;
+}
+
+footer a{
+  color: var(--yellow);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+footer a:hover{
+  text-decoration: underline;
+}
+
+/* =========================
+   FOOTER (INFO + HOURS)
+========================= */
+
+.site-footer{
+  background: #111;
+  color: #fff;
+  padding: 48px 16px 32px;
+}
+
+.footer-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  text-align: center;
+}
+
+.footer-col h3{
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.footer-col p{
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.site-footer a{
+  color: var(--yellow);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-footer a:hover{
+  text-decoration: underline;
+}
+
+/* Credit styling */
+.footer-credit{
+  font-size: 0.95rem;
+}
+
+/* Mobile */
+@media (max-width: 768px){
+
+  .footer-inner{
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .site-footer{
+    padding: 36px 14px 28px;
+  }
+}
