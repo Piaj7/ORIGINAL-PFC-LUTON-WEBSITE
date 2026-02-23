@@ -109,10 +109,10 @@ body::after{
 .hero-content{ max-width: 520px; }
 
 .hero-title-text{
-  font-family: "Chewy", cursive;
-  font-size: clamp(3rem, 7vw, 6rem);
-  line-height: 1.05;
-  text-shadow: 3px 3px 0 #6e0000, 6px 6px 0 #ff4d4d;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .hero-title-text span{ display:block; font-size: 0.8em; margin-top: 10px; }
@@ -1480,4 +1480,66 @@ footer a:hover{
 .section-alt h3,
 .section-alt p{
   color: #fff;
+}
+
+/* =========================
+   FLOATING CONTENT PANEL
+========================= */
+
+/* =========================
+   SOLID DARK PANEL (matches Best Sellers)
+========================= */
+
+.content-box{
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 36px 28px;
+
+  background: #1c1c1c; /* SAME as best sellers */
+  color: #fff;
+
+  border-radius: 22px;
+
+  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+}
+
+/* Text inside dark panels */
+.content-box h1,
+.content-box h2,
+.content-box h3,
+.content-box p,
+.content-box label{
+  color: #fff;
+}
+
+@media (max-width: 768px){
+  .content-box{
+    margin: 24px 12px;
+    padding: 22px 16px;
+  }
+}
+
+/* =========================
+   FIX FAQ TEXT COLOR
+========================= */
+
+/* Question buttons */
+.faq-question,
+.faq-question span,
+.faq-question h3{
+  color: #000000 !important;
+}
+
+/* Answer text */
+.faq-answer{
+  color: #000000 !important;
+}
+
+/* FAQ cards background (light so black text works) */
+.faq-item{
+  background: #ffffff;
+}
+
+.faq-question::after{
+  color: #000000 !important;
 }
