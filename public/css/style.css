@@ -88,99 +88,7 @@ body::after{
 .muted{ opacity: 0.75; }
 .price{ font-weight: 800; margin-top: 10px; }
 
-/* =========================
-   NAVBAR (STICKY + WHITE PILL)
-========================= */
-.navbar{
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: transparent;
-  padding: 18px 0;
-}
 
-.navbar-inner{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 14px 18px;
-  display:flex;
-  align-items:center;
-  justify-content: space-between;
-  gap: 16px;
-
-  background: rgba(255,255,255,0.92);
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-soft);
-  color: var(--black);
-}
-
-.nav-logo{
-  font-family: "Chewy", cursive;
-  font-size: 1.8rem;
-  color: var(--red-main);
-}
-
-/* Desktop nav links */
-.nav-links{
-  display:flex;
-  gap: 18px;
-  align-items:center;
-}
-
-.nav-links a{
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--black);
-  padding: 6px 10px;
-  border-radius: 999px;
-  position: relative;
-  transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease;
-}
-
-.nav-links a:hover{
-  background: rgba(0,0,0,0.08);
-  color: var(--red-main);
-  transform: translateY(-2px);
-}
-
-/* underline base */
-.nav-links a{
-  position: relative;
-  text-decoration: none;
-}
-
-/* underline line */
-.nav-links a::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  height: 3px;
-  width: 0%;
-  background: #d62828;
-  border-radius: 2px;
-  transition: width 0.25s ease;
-}
-
-/* hover underline */
-.nav-links a:hover::after{
-  width: 100%;
-}
-
-/* ✅ active underline stays */
-.nav-links a.active::after{
-  width: 100%;
-}
-
-/* Hamburger */
-.nav-toggle{
-  display:none;
-  border:0;
-  background:transparent;
-  font-size: 2rem;
-  cursor:pointer;
-  color: var(--black);
-}
 
 /* =========================
    HERO
@@ -1221,4 +1129,177 @@ footer a:hover{
   background: #d62828;  /* red background on hover */
   color: #ffffff;       /* white icon */
   transform: translateY(-4px);
+}
+
+/* =========================
+   BIG BRAND NAVBAR (TALLER + BOLDER)
+========================= */
+
+.navbar{
+  width: 100%;
+  background: #111;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Main container */
+.navbar-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px 24px; /* ⬅️ taller */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+/* Brand */
+.nav-brand a{
+  color: #fff;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem); /* ⬅️ bigger */
+  font-weight: 900;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Links */
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 40px; /* ⬅️ more space */
+}
+
+.nav-links a{
+  color: #fff;
+  font-size: 1.15rem; /* ⬅️ bigger */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  position: relative;
+}
+
+/* underline */
+.nav-links a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px; /* ⬅️ lower */
+  width: 0%;
+  height: 3px;
+  background: #d62828;
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+  width: 100%;
+}
+
+/* Hamburger */
+.nav-toggle{
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.4rem; /* ⬅️ bigger */
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px){
+
+  .navbar-inner{
+    padding: 18px 14px;
+  }
+
+  .nav-brand a{
+    font-size: 1.5rem;
+  }
+
+  .nav-toggle{
+    display: block;
+  }
+
+  .nav-links{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+
+    background: #111;
+    padding: 22px 0 26px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .nav-links[data-open="true"]{
+    display: flex;
+  }
+
+  .nav-links a{
+    font-size: 1.2rem;
+  }
+}
+
+/* Logo in navbar */
+.nav-brand-link{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo-img{
+  height: 54px;         /* change to taste */
+  width: auto;
+  display: block;
+}
+
+/* Mobile: make logo a bit smaller */
+@media (max-width: 768px){
+  .nav-logo-img{
+    height: 44px;
+  }
+}
+
+.nav-logo-img{
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+
+/* Improve logo alignment */
+.nav-brand{
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-img{
+  height: 48px; /* slightly tighter */
+  margin-top: 2px; /* optical alignment */
+}
+
+/* =========================
+   CLEAN PAGE TITLES
+========================= */
+
+.page-title{
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  margin-bottom: 24px;
+  text-align: center;
 }
