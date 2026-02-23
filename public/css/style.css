@@ -39,6 +39,13 @@ body{
 /* =========================
    MAIN SITE BACKGROUND
 ========================= */
+/* =========================
+   GLOBAL FONT RESET
+========================= */
+
+*{
+  font-family: "Poppins", sans-serif !important;
+}
 
 body{
   min-height: 100vh;
