@@ -324,17 +324,40 @@ body::after{
 
 .contact-card a{ color: var(--red-main); font-weight: 800; }
 
+/* =========================
+   CONTACT PAGE GLOW DIVIDER
+========================= */
+
 .contact-social{
-  margin-top: 48px;
-  border-top: 2px dashed rgba(255,255,255,0.35);
-  padding-top: 32px;
+  border-top: none; /* remove dashed line */
+
+  position: relative;
+  padding-top: 40px;
+  margin-top: 40px;
+}
+
+/* glowing red line */
+.contact-social::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(
+    180deg,
+    transparent,
+    #d62828,
+    transparent
+  );
+
+  border-radius: 3px;
 }
 
 .section-title{
   font-family: "Chewy", cursive;
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   margin-bottom: 16px;
-  text-shadow: 2px 2px 0 #6e0000, 4px 4px 0 #ff4d4d;
 }
 
 .social-grid{
@@ -1134,6 +1157,13 @@ footer a:hover{
   transform: translateY(-4px);
 }
 
+.social-svg{
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: currentColor; /* key: uses .social-circle color */
+}
+
 /* =========================
    BIG BRAND NAVBAR (TALLER + BOLDER)
 ========================= */
@@ -1538,10 +1568,10 @@ footer a:hover{
 .grey-box h1,
 .grey-box h2,
 .grey-box h3,
-.grey-box p,
-.grey-box a{
+.grey-box p{
   color: #ffffff;
 }
+
 @media (max-width: 768px){
   .grey-box{
     padding: 18px 14px;
@@ -1582,12 +1612,6 @@ footer a:hover{
 
 
 /* Make links inside grey cards red (Contact/FAQ/About cards) */
-.grey-box a{
-  color: #d62828;
-  font-weight: 700;
-  text-decoration: none;
-}
-
 .grey-box a:hover{
   text-decoration: underline;
 }
