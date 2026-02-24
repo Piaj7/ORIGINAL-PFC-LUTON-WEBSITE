@@ -170,7 +170,6 @@ body::after{
   font-family: "Chewy", cursive;
   font-size: clamp(2.2rem, 5vw, 4rem);
   margin-bottom: 26px;
-  text-shadow: 2px 2px 0 #6e0000, 4px 4px 0 #ff4d4d;
 }
 
 .seller-grid{
@@ -229,7 +228,7 @@ body::after{
 .page-title{
   font-family: "Chewy", cursive;
   font-size: clamp(2.2rem, 4vw, 3.4rem);
-  text-shadow: 2px 2px 0 #6e0000, 4px 4px 0 #ff4d4d;
+  
 }
 
 .about-layout{
@@ -316,8 +315,8 @@ body::after{
 }
 
 .contact-card{
-  background: rgba(255,255,255,0.95);
-  color: var(--black);
+  background: rgba(0, 0, 0, 0.95);
+  color: var(--white);
   border-radius: 18px;
   padding: 16px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
@@ -346,8 +345,8 @@ body::after{
 }
 
 .social-card{
-  background: rgba(255,255,255,0.95);
-  color: var(--black);
+  background: rgba(0, 0, 0, 0.95);
+  color: var(--white);
   border-radius: 18px;
   padding: 18px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
@@ -752,7 +751,7 @@ body{
 }
 
 .faq details{
-  background: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
   border: 1px solid rgb(255, 255, 255);
   border-radius: 14px;
   padding: 12px 14px;
@@ -836,7 +835,7 @@ body{
   border-radius: 14px;
   padding: 12px 14px;
   margin-bottom: 10px;
-  background: #fff;
+  background: #000000;
   box-shadow: 0 10px 20px rgba(0,0,0,0.06);
 }
 
@@ -1487,7 +1486,7 @@ footer a:hover{
 ========================= */
 
 /* =========================
-   SOLID DARK PANEL (matches Best Sellers)
+   SOLID DARK PANEL 
 ========================= */
 
 .content-box{
@@ -1520,26 +1519,75 @@ footer a:hover{
 }
 
 /* =========================
-   FIX FAQ TEXT COLOR
+   UNIVERSAL GREY CONTENT BOX
+   (same as FAQ cards)
 ========================= */
 
-/* Question buttons */
-.faq-question,
-.faq-question span,
-.faq-question h3{
-  color: #000000 !important;
+.grey-box{
+  background: #1c1c1c;  /* SAME as FAQ */
+  color: #ffffff;
+
+  padding: 22px 20px;
+  border-radius: 14px;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+
+  margin-bottom: 18px;
 }
 
-/* Answer text */
-.faq-answer{
-  color: #000000 !important;
+.grey-box h1,
+.grey-box h2,
+.grey-box h3,
+.grey-box p,
+.grey-box a{
+  color: #ffffff;
+}
+@media (max-width: 768px){
+  .grey-box{
+    padding: 18px 14px;
+  }
 }
 
-/* FAQ cards background (light so black text works) */
-.faq-item{
-  background: #ffffff;
+/* =========================
+   MENU CATEGORY CHIPS
+========================= */
+
+.chip{
+  background: #f2f2f2;
+  color: #111;
+
+  border: 2px solid transparent;
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
 }
 
-.faq-question::after{
-  color: #000000 !important;
+/* Hover effect */
+.chip:hover{
+  border-color: #d62828;
+  color: #d62828;
+}
+
+/* Active category */
+.chip.is-active{
+  background: #d62828;   /* brand red */
+  color: #ffffff;
+  border-color: #d62828;
+  box-shadow: 0 6px 18px rgba(214,40,40,0.35);
+}
+
+
+/* Make links inside grey cards red (Contact/FAQ/About cards) */
+.grey-box a{
+  color: #d62828;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.grey-box a:hover{
+  text-decoration: underline;
 }
