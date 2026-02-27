@@ -32,7 +32,7 @@ a:hover { text-decoration: none; }
 
 /* -------- BACKGROUND -------- */
 body{
-  background: url("../images/background2.png") no-repeat center center fixed;
+  background: url("../images/background.png") no-repeat center center fixed;
   background-size: cover;
 }
 /* ===== PFC Brand Background (Warm Red/Orange) ===== */
