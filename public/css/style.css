@@ -32,8 +32,9 @@ a:hover { text-decoration: none; }
 
 /* -------- BACKGROUND -------- */
 body{
-  background: url("../images/background.png") no-repeat center center fixed;
+  background: url("../images/background2.jpeg") no-repeat center center fixed;
   background-size: cover;
+  background: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.55)),;
 }
 /* ===== PFC Brand Background (Warm Red/Orange) ===== */
 /* =========================
@@ -436,8 +437,9 @@ footer a{
 }
 /* -------- TEST BACKGROUND ONLY -------- */
 body{
-  background: url("../images/background.png") no-repeat center center fixed;
+  background: url("../images/background2.jpeg") no-repeat center center fixed;
   background-size: cover;
+  background: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.55)),;
 }
 
 /* =========================
@@ -931,7 +933,7 @@ body{
   padding: 30px 0 50px;
   background:
     linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.55)),
-    url("./background.png") center / cover no-repeat; /* <-- change filename/path if needed */
+    url("./background2.jpeg") center / cover no-repeat; /* <-- change filename/path if needed */
 }
 
 /* Make sure hero text stays readable */
