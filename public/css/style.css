@@ -1617,3 +1617,49 @@ footer a:hover{
 .grey-box a:hover{
   text-decoration: underline;
 }
+
+.variant-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+/* Make all prices yellow automatically */
+.menu-price,
+.variant-list li {
+  color: #ffcc00;
+  font-weight: 700;
+}
+
+.variant-list li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.variant-list li span:last-child {
+  color: #ffcc00;
+  font-weight: 700;
+}
+
+/* Variant price list layout */
+.variant-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.variant-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.variant-label {
+  opacity: 0.9;
+}
+
+/* Prices always yellow */
+.menu-price {
+  color: #ffcc00;
+  font-weight: 700;
+}
